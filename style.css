@@ -1,0 +1,184 @@
+.content,
+.content-Volume,
+.content-Temperature,
+.content-Length,
+.content-Mass,
+.content-Area {
+    align-content: center;
+    margin: auto auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+input[type=text],
+select {
+
+    padding: 12px 20px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: content-box;
+}
+
+h1 {
+    text-align: center;
+    font-size: 300%;
+    padding-bottom: o;
+    color: orange;
+}
+
+
+a {
+    color: #c6a9e3;
+    margin-right: 17px;
+    font-size: 130%;
+    text-decoration: none;
+}
+
+
+a:hover {
+
+    font-weight: 500;
+    color: #e67e22;
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #e67e22;
+    transition: border-bottom 0.2s, color 0.2s;
+    text-decoration-line: none;
+}
+
+
+/*begin---------------------------------------------------------*/
+/*HOME BUTTON STYLING*/
+#footer:active,
+#footer:hover {
+
+    /*    background-color: #b9f7f7;*/
+    border-radius: 3px;
+    border-color: rgba(230, 64, 34, 0.99);
+    text-decoration: none;
+    padding: 2.9px;
+    text-decoration-line: none;
+
+}
+
+#footer {
+    text-decoration: none;
+    border: 2.3px solid rgba(230, 64, 34, 0.51);
+    ;
+    border-radius: 10%;
+    padding: 4.3px;
+    color: #f89b49;
+    font-size: 15px;
+}
+
+/*END--------------------------------------------------------*/
+
+
+
+
+
+
+h5 {
+    color: darkgreen;
+    font-size: 135%;
+}
+
+h3 {
+    color: #6c6cea;
+    font-size: 230%;
+    text-decoration: none;
+}
+
+#n1,
+#result {
+    font-size: 8pt;
+}
+
+#select {
+    font-size: 8pt;
+}
+
+.content-Area {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(images/area.jpg);
+    height: 100%;
+    background-position: center;
+    background-size: auto;
+}
+
+.content-Length {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(images/length.jpg);
+    height: 100%;
+    background-position: center;
+    background-size: auto;
+}
+
+.content-Mass {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(images/mass.jpg);
+    height: 100%;
+    background-position: center;
+    background-size: auto;
+}
+
+.content-Temperature {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url(images/temperature.jpg);
+    height: 100%;
+    background-position: center;
+    background-size: auto;
+}
+
+.content-Volume {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(images/volume.jpg);
+    height: 100%;
+    background-position: center;
+    background-size: auto;
+}
+
+.content {
+
+    height: 100%;
+    background-color: black;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+
+}
+
+
+li {
+    list-style: none;
+    display: inline;
+    color: aqua;
+    text-decoration: none;
+
+}
+
+/*#ball animation*/
+#ball {
+    width: 50px;
+    height: 45px;
+    margin: 50px auto;
+    position: fixed;
+    left: 20%;
+    top: 60%;
+    border-radius: 50%;
+    background: linear-gradient(35deg, #46c9c9, #679887);
+    animation-name: fade;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fade {
+    50% {
+        left: 75%;
+        opacity: 0.1;
+
+    }
+}

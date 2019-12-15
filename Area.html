@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<Html>
+
+<head>
+    <title>Matrix Unit Converter</title>
+    <meta content="text/html; charset=windows-1252" http-equiv="Content-Type" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="content-Area">
+        <h1>Matrix Unit Converter</h1>
+        <h3><b>Area Conversions</b></h3>
+        <input type="text" id="n1" placeholder="enter value here!" onchange="ConvertBy()" onclick="ConvertBy()">
+        <select id="select" name="unit1" onchange="ConvertBy()" onclick="ConvertBy()">
+            <option value="Sqr.Inch">Sqr.Inch</option>
+            <option value="Sqr.Foot">Sqr.Foot</option>
+            <option value="Sqr.Metre" selected>Sqr.Metre</option>
+            <option value="Acre">Acre</option>
+            <option value="Hectare">Hectare</option>
+            <option value="Sqr.Kilometre">Sqr.Kilometre</option>
+        </select>
+        <p><b>&#61;</b></p>
+        <input type="text" id="result" placeholder="Answer displayed here">
+        <select id="select" name="unit2" onchange="ConvertBy()" onclick="ConvertBy()">
+            <option value="Sqr.Inch">Sqr.Inch</option>
+            <option value="Sqr.Foot" selected>Sqr.Foot</option>
+            <option value="Sqr.Metre">Sqr.Metre</option>
+            <option value="Acre">Acre</option>
+            <option value="Hectare">Hectare</option>
+            <option value="Sqr.Kilometre">Sqr.Kilometre</option>
+        </select>
+        <br><br>
+        <!--        <input type="button" onClick="ConvertBy()" Value="Convert" />-->
+        <br>
+        <br>
+        <a href="index.html" id="footer">Home</a>
+    </section>
+    <script>
+        function ConvertBy() {
+            var num1 = document.getElementById("n1").value;
+
+            var s = document.getElementsByName('unit1')[0];
+
+            var unit1 = s.options[s.selectedIndex].text;
+
+            var p = document.getElementsByName('unit2')[0];
+
+            var unit2 = p.options[p.selectedIndex].text;
+
+            if (unit1 === unit2) {
+                document.getElementById("result").value = num1;
+            }
+
+            // Sqr.Foot to rest
+
+            if (unit1 == "Sqr.Foot") {
+                if (unit2 == "Sqr.Inch") {
+                    document.getElementById("result").value = num1 * 144;
+                } else if (unit2 == "Sqr.Metre") {
+                    document.getElementById("result").value = num1 * 0.092903;
+                } else if (unit2 == "Acre") {
+                    document.getElementById("result").value = num1 * 0.000022957;
+                } else if (unit2 == "Hectare") {
+                    document.getElementById("result").value = num1 * 0.0000092903;
+                } else if (unit2 == "Sqr.Kilometre") {
+                    document.getElementById("result").value = num1 * 0.000000092903;
+                }
+            }
+
+            //Sqr.Inch to rest
+
+            if (unit1 == "Sqr.Inch") {
+                if (unit2 == "Sqr.Foot") {
+                    document.getElementById("result").value = num1 * 0.006944;
+                } else if (unit2 == "Sqr.Metre") {
+                    document.getElementById("result").value = num1 * 0.00064516;
+                } else if (unit2 == "Acre") {
+                    document.getElementById("result").value = num1 * 0.00000015942;
+                } else if (unit2 == "Hectare") {
+                    document.getElementById("result").value = num1 * 0.00000006451;
+                } else if (unit2 == "Sqr.Kilometre") {
+                    document.getElementById("result").value = num1 * 0.0000000064516;
+                }
+            }
+
+            //Sqr.Metre to rest
+            if (unit1 == "Sqr.Metre") {
+                if (unit2 == "Sqr.Inch") {
+                    document.getElementById("result").value = num1 * 1550;
+                } else if (unit2 == "Sqr.Foot") {
+                    document.getElementById("result").value = num1 * 10.7639;
+                } else if (unit2 == "Acre") {
+                    document.getElementById("result").value = num1 * 0.000247105;
+                } else if (unit2 == "Hectare") {
+                    document.getElementById("result").value = num1 * 0.0001;
+                } else if (unit2 == "Sqr.Kilometre") {
+                    document.getElementById("result").value = num1 * 0.000001;
+                }
+            }
+
+            //Acre to rest
+            if (unit1 == "Acre") {
+                if (unit2 == "Sqr.Inch") {
+                    document.getElementById("result").value = num1 * 6273000;
+                } else if (unit2 == "Sqr.Metre") {
+                    document.getElementById("result").value = num1 * 4046.86;
+                } else if (unit2 == "Sqr.Foot") {
+                    document.getElementById("result").value = num1 * 43560;
+                } else if (unit2 == "Hectare") {
+                    document.getElementById("result").value = num1 * 0.404686;
+                } else if (unit2 == "Sqr.Kilometre") {
+                    document.getElementById("result").value = num1 * 0.0040468;
+                }
+            }
+
+            //Hectare to rest
+
+            if (unit1 == "Hectare") {
+                if (unit2 == "Sqr.Inch") {
+                    document.getElementById("result").value = num1 * 15500000;
+                } else if (unit2 == "Sqr.Metre") {
+                    document.getElementById("result").value = num1 * 10000;
+                } else if (unit2 == "Acre") {
+                    document.getElementById("result").value = num1 * 2.47105;
+                } else if (unit2 == "Sqr.Foot") {
+                    document.getElementById("result").value = num1 * 107639;
+                } else if (unit2 == "Sqr.Kilometre") {
+                    document.getElementById("result").value = num1 * 0.01;
+                }
+            }
+
+            //Sqr.kilometre to rest
+
+            if (unit1 == "Sqr.Kilometre") {
+                if (unit2 == "Sqr.Inch") {
+                    document.getElementById("result").value = num1 * 1550000000;
+                } else if (unit2 == "Sqr.Metre") {
+                    document.getElementById("result").value = num1 * 1000000;
+                } else if (unit2 == "Acre") {
+                    document.getElementById("result").value = num1 * 247.105;
+                } else if (unit2 == "Sqr.Foot") {
+                    document.getElementById("result").value = num1 * 10760000;
+                } else if (unit2 == "Hectare") {
+                    document.getElementById("result").value = num1 * 100;
+                }
+            }
+
+        }
+
+    </script>
+</body>
+
+</Html>

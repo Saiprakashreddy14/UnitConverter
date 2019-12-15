@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<Html>
+
+<head>
+    <title>Matrix Unit Converter</title>
+    <meta content="text/html; charset=windows-1252" http-equiv="Content-Type" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="content-Volume">
+        <h1>Matrix Unit Converter</h1>
+        <h3><b>Volume Conversions</b></h3>
+        <!--  <p><b>From :</b></p>-->
+        <input type="text" id="n1" placeholder="enter value here!" onchange="ConvertBy()" onclick="ConvertBy()">
+
+        <select name="unit1" id="select" onchange="ConvertBy()" onclick="ConvertBy()">
+
+            <option value="Milli-litre">Milli-litre</option>
+            <option value="Table-Spoon">Table-Spoon</option>
+            <option value="Litre" selected>Litre</option>
+            <option value="Galon">Galon</option>
+            <option value="Barrel">Barrel</option>
+
+        </select>
+
+        <p id="equal"><b>&#61;</b></p>
+
+        <input type="text" id="result" placeholder="Answer displayed here">
+
+
+        <select name="unit2" id="select" onchange="ConvertBy()" onclick="ConvertBy()">
+            <option value="Milli-litre">Milli-litre</option>
+            <option value="Table-Spoon">Table-Spoon</option>
+            <option value="Litre">Litre</option>
+            <option value="Galon" selected>Galon</option>
+            <option value="Barrel">Barrel</option>
+
+
+        </select>
+
+        <br><br>
+        <!--        <input type="button" onClick="ConvertBy()" Value="Convert" />-->
+        <br>
+        <br>
+
+        <a href="index.html" id="footer">Home</a>
+
+    </div>
+
+    <script>
+        function ConvertBy() {
+            var num1 = document.getElementById("n1").value;
+
+            var s = document.getElementsByName('unit1')[0];
+            var unit1 = s.options[s.selectedIndex].text;
+
+            var p = document.getElementsByName('unit2')[0];
+            var unit2 = p.options[p.selectedIndex].text;
+
+            if (unit1 === unit2) {
+                document.getElementById("result").value = num1;
+            }
+
+            // Table-Spoon to rest
+
+            if (unit1 == "Table-Spoon") {
+                if (unit2 == "Milli-litre") {
+                    document.getElementById("result").value = num1 * 2.54;
+                } else if (unit2 == "Litre") {
+                    document.getElementById("result").value = num1 * 0.08333;
+                } else if (unit2 == "Galon") {
+                    document.getElementById("result").value = num1 * 0.0254;
+                } else if (unit2 == "Barrel") {
+                    document.getElementById("result").value = num1 * 0.0000254;
+                }
+            }
+
+            //Milli-litre to rest
+
+            if (unit1 == "Milli-litre") {
+                if (unit2 == "Table-Spoon") {
+                    document.getElementById("result").value = num1 * 0.393701;
+                } else if (unit2 == "Litre") {
+                    document.getElementById("result").value = num1 * 0.0328084;
+                } else if (unit2 == "Galon") {
+                    document.getElementById("result").value = num1 * 0.01;
+                } else if (unit2 == "Barrel") {
+                    document.getElementById("result").value = num1 * 0.00001;
+                }
+            }
+
+            //Litre to rest
+            if (unit1 == "Litre") {
+                if (unit2 == "Milli-litre") {
+                    document.getElementById("result").value = num1 * 30.48;
+                } else if (unit2 == "Table-Spoon") {
+                    document.getElementById("result").value = num1 * 12;
+                } else if (unit2 == "Galon") {
+                    document.getElementById("result").value = num1 * 0.3048;
+                } else if (unit2 == "Barrel") {
+                    document.getElementById("result").value = num1 * 0.0003048;
+                }
+            }
+
+            //Galon to rest
+            if (unit1 == "Galon") {
+                if (unit2 == "Milli-litre") {
+                    document.getElementById("result").value = num1 * 100;
+                } else if (unit2 == "Litre") {
+                    document.getElementById("result").value = num1 * 3.28084;
+                } else if (unit2 == "Table-Spoon") {
+                    document.getElementById("result").value = num1 * 39.3701;
+                } else if (unit2 == "Barrel") {
+                    document.getElementById("result").value = num1 * 0.001;
+                }
+            }
+
+            //Barrel to rest
+
+            if (unit1 == "Barrel") {
+                if (unit2 == "Milli-litre") {
+                    document.getElementById("result").value = num1 * 100000;
+                } else if (unit2 == "Litre") {
+                    document.getElementById("result").value = num1 * 3280.84;
+                } else if (unit2 == "Galon") {
+                    document.getElementById("result").value = num1 * 1000;
+                } else if (unit2 == "Table-Spoon") {
+                    document.getElementById("result").value = num1 * 39370.1;
+                }
+            }
+
+        }
+
+    </script>
+
+
+
+</body>
+
+
+
+</Html>

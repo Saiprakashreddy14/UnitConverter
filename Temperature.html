@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<Html>
+
+<head>
+
+    <title>Matrix Unit Converter</title>
+    <meta content="text/html; charset=windows-1252" http-equiv="Content-Type" />
+    <link rel="stylesheet" href="style.css">
+
+
+
+
+</head>
+
+<body>
+    <div class="content-Temperature">
+        <h1>Matrix Unit Converter</h1>
+
+
+
+
+        <h3><b>Temperature Conversions</b></h3>
+
+        <!--            <p><b>From :</b></p>-->
+        <input type="text" id="n1" placeholder="enter value here!" onchange="ConvertBy()" onclick="ConvertBy()">
+
+        <select name="unit1" id="select" onchange="ConvertBy()" onclick="ConvertBy()">
+
+            <option value="Faranheit">Faranheit</option>
+            <option value="Celsius" selected>Celsius</option>
+            <option value="Kelvin">Kelvin</option>
+
+        </select>
+
+        <p><b>&#61;</b></p>
+
+        <input type="text" id="result" placeholder="Answer displayed here">
+
+
+        <select name="unit2" id="select" onchange="ConvertBy()" onclick="ConvertBy()">
+            <option value="Faranheit">Faranheit</option>
+            <option value="Celsius">Celsius</option>
+            <option value="Kelvin" selected>Kelvin</option>
+
+        </select>
+
+        <br><br>
+        <!--        <input type="button" onClick="ConvertBy()" Value="Convert" />-->
+        <br>
+        <br>
+
+        <a href="index.html" id="footer">Home</a>
+
+    </div>
+
+    <script>
+        function ConvertBy() {
+            var num1 = document.getElementById("n1").value;
+
+            var s = document.getElementsByName('unit1')[0];
+            var unit1 = s.options[s.selectedIndex].text;
+
+            var p = document.getElementsByName('unit2')[0];
+            var unit2 = p.options[p.selectedIndex].text;
+
+            if (unit1 === unit2) {
+                document.getElementById("result").value = num1;
+            }
+
+            // Celsius to rest
+
+            if (unit1 == "Celsius") {
+                if (unit2 == "Faranheit") {
+                    document.getElementById("result").value = ((num1) * (9 / 5)) + 32;
+                } else if (unit2 == "Kelvin") {
+                    document.getElementById("result").value = num1 + 273;
+                }
+
+            }
+
+            //Faranheit to rest
+
+            if (unit1 == "Faranheit") {
+                if (unit2 == "Celsius") {
+                    document.getElementById("result").value = (num1 - 32) * (5 / 9);
+                } else if (unit2 == "Kelvin") {
+                    document.getElementById("result").value = ((num1 - 32) * (5 / 9)) + 273;
+                }
+
+            }
+
+            //Kelvin to rest
+            if (unit1 == "Kelvin") {
+                if (unit2 == "Faranheit") {
+                    document.getElementById("result").value = (num1 - 273) * (9 / 5);
+                } else if (unit2 == "Celsius") {
+                    document.getElementById("result").value = num1 - 273;
+                }
+
+            }
+
+
+        }
+
+    </script>
+
+
+
+</body>
+
+
+
+</Html>
